@@ -68,6 +68,11 @@
   animation: SHAKE 1s infinite;
 }
 
+.road {
+  width: 100%;
+  border: 4px dotted #444444;
+}
+
 @keyframes SHAKE {
   0% {
     transform: rotate(20deg);

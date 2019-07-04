@@ -11,19 +11,25 @@ import Menu from './Menu';
 const Home = () => {
     const homeRef = useRef(null)
 
+    const toExperience = () => window.scrollTo({
+        top: homeRef.current.scrollHeight,
+        behavior: 'smooth'
+    })
+
     useEffect(() => {
+        toExperience()
+
         homeRef.current.onwheel = (e) => {
+            e.preventDefault()
+
             if (e.deltaY >= 3) {
-                window.scrollTo({
-                    top: homeRef.current.scrollHeight,
-                    behavior: 'smooth'
-                })
+                toExperience()
             }
         }
     }, [])
 
     return (<div className="w-100 vh-100" ref={homeRef}>
-        <Menu/>
+        <Menu toExperience={() => toExperience()}/>
         <img alt="ellipse" src={ellipse} className="ellipse"/>
         <div className="container d-flex justify-content-between mt-5">
             <div className="pt-5 pl-5">
