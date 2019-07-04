@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import ellipse from '../images/ellipse.svg'
 import superhero from '../images/superhero.svg'
 import person from '../images/person.png'
@@ -9,7 +9,20 @@ import GitHubButton from 'react-github-btn'
 import Menu from './Menu';
 
 const Home = () => {
-    return (<div className="w-100 vh-100">
+    const homeRef = useRef(null)
+
+    useEffect(() => {
+        homeRef.current.onwheel = (e) => {
+            if (e.deltaY >= 3) {
+                window.scrollTo({
+                    top: homeRef.current.scrollHeight,
+                    behavior: 'smooth'
+                })
+            }
+        }
+    }, [])
+
+    return (<div className="w-100 vh-100" ref={homeRef}>
         <Menu/>
         <img alt="ellipse" src={ellipse} className="ellipse"/>
         <div className="container d-flex justify-content-between mt-5">
