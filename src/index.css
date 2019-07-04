@@ -61,6 +61,25 @@
   transform: rotate(-30deg);
 }
 
+.phone-animation {
+  -webkit-animation: SHAKE 1s infinite;
+  -moz-animation: SHAKE 1s infinite;
+  -o-animation: SHAKE 1s infinite;
+  animation: SHAKE 1s infinite;
+}
+
+@keyframes SHAKE {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
 @keyframes SUPERHERO-FLY {
   0% {
     transform: translateY(0px);
