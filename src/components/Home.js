@@ -17,7 +17,7 @@ const Home = () => {
     })
 
     useEffect(() => {
-        toExperience()
+        // toExperience()
 
         homeRef.current.onwheel = (e) => {
             e.preventDefault()
