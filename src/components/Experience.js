@@ -6,29 +6,28 @@ import car from '../images/car.svg'
 const Experience = () => {
     const experienceRef = useRef(null)
     const carRef = useRef(null)
+    const car2Ref = useRef(null)
     const roadRef = useRef(null)
-    
-    // const toHome = () => 
-
-    // const toTechnologyStack = () => window.scrollTo({
-    //     top: experienceRef.current.scrollHeight,
-    //     behavior: 'smooth'
-    // })
 
     const carForward = () => {
-        let adding = Number(carRef.current.style.paddingLeft.replace('px','')) + 20
-        if (adding < 725) {
+        let adding = Number(carRef.current.style.paddingLeft.replace('px','')) + 24
+        if (adding < 768) {
             carRef.current.style.paddingLeft = `${adding}px`
         } else {
-            // carRef.current.style.paddingLeft = `0px`
+            let adding2 = Number(car2Ref.current.style.paddingLeft.replace('px','')) + 24
+            if (adding2 < 1024) {
+                car2Ref.current.style.paddingLeft = `${adding2}px`
+            }
         }
     }
 
     const carBackward = () => {
-        let reduce = Number(carRef.current.style.paddingLeft.replace('px','')) - 20
+        let reduce = Number(carRef.current.style.paddingLeft.replace('px','')) - 24
         if (reduce > 0) {
-            carRef.current.style.paddingLeft = `${reduce}px`;                    
+            carRef.current.style.paddingLeft = `${reduce}px`;
         } else {
+            carRef.current.style.paddingLeft = `0px`;
+
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -70,7 +69,7 @@ const Experience = () => {
             <div className="d-flex m-4">
                 <div className="flex-fill ml-4 pt-5 mt-5">
                     <div>
-                        {/* <img height={64} src={car} alt="car"/> */}
+                        <img ref={car2Ref} height={64} src={car} alt="car"/>
                     </div>
                     <div ref={roadRef} className="road"></div>
                 </div>

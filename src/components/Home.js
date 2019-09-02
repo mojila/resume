@@ -49,7 +49,7 @@ const Home = () => {
                 <img className="superhero-animation" height="440px" src={superhero} alt="superhero"/>
             </div>
         </div>
-        <div className="p-2 pt-3 pb-3 shadow border rounded m-2 ml-5 mr-5 d-flex justify-content-center">
+        <div className="p-2 pt-3 pb-3 shadow border rounded mt-5 ml-5 mr-5 d-flex justify-content-center">
             <div className="mr-5">
                 <img height={24} src={person} alt="person"/>
                 <span className="mt-1 ml-2 text-primary">Moch. Aji Laksono</span>
